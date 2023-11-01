@@ -1,304 +1,185 @@
-.header {
-    background-color: #FFFFFF;
-    display: flex;
-    color: black;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 1280px;
-  }
-  
-  .lista__header {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-    padding-right: 170px;
-    font-family: "Jost", sans-serif;
-  }
-  
-  .lista__item {
-    color: black;
-    text-decoration: none;
-  }
-  
-  .login__header {
-    color: black;
-    text-decoration: none;
-    padding-right: 80px;
-    border: 1px solid black;
-    padding: 10px;
-    font-size: 13px;
-    font-family: "Jost", sans-serif;
-  }
-  
-  @media (max-width: 968px) {
-    .lista__header {
-      display: none;
-    }
-    .login__header {
-      position: absolute;
-      right: 50px;
-      top: 30px;
-    }
-    .header {
-      display: flex;
-      justify-content: center;
-      position: relative;
-    }
-  }
-  @media (max-width: 500px) {
-    .login__header {
-      position: static;
-    }
-  }
-  .s1 {
-    display: flex;
-    align-items: center;
-  }
-  
-  .s1Container {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .s1Texto {
-    font-family: "Jost", sans-serif;
-    font-weight: 800;
-    font-size: 36px;
-    text-align: start;
-    padding-left: 19rem;
-  }
-  
-  .s1Btn {
-    margin-left: 62%;
-    text-align: center;
-    padding: 10px 10px;
-    margin-right: 21%;
-    color: black;
-    text-decoration: none;
-    border: solid 1px black;
-    font-family: "Jost", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-  }
-  
-  .s1Img {
-    max-width: 600px;
-    padding-right: 8rem;
-  }
-  
-  @media (max-width: 1220px) {
-    .s1Img {
-      display: none;
-    }
-    .s1Texto {
-      display: none;
-    }
-    .s1Btn {
-      display: none;
-    }
-  }
-  .s2 {
-    height: 100vh;
-  }
-  
-  .s2Titulo {
-    text-align: center;
-    margin-top: 5%;
-    font-size: 42px;
-    font-family: "Jost", sans-serif;
-    font-weight: 900;
-  }
-  
-  .s2Filtros {
-    display: flex;
-    gap: 4em;
-    justify-content: center;
-  }
-  
-  .filtrosItem {
-    text-decoration: none;
-    color: black;
-    font-family: "Jost", sans-serif;
-    font-weight: 900;
-    font-size: 18px;
-  }
-  
-  .s2Imgs {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 15px;
-    gap: 100px;
-    font-family: "Jost", sans-serif;
-    font-size: 15px;
-  }
-  
-  .s2ImgsPrimeira {
-    margin-top: 30px;
-  }
-  
-  .s2ImgsTerceira {
-    margin-top: 25px;
-  }
-  
-  .s2ImgsContainerDentro {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
-  .s2Imgs2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 15px;
-    gap: 100px;
-    font-family: "Jost", sans-serif;
-    font-size: 15px;
-  }
-  
-  .s2ImgsContainerDentro2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
-  .s2Imgs2Primeira {
-    margin-top: 2px;
-  }
-  
-  @media (max-width: 968px) {
-    .s2Titulo {
-      font-size: 32px;
-      margin-top: 50px;
-    }
-    .s2Filtros {
-      flex-wrap: wrap;
-    }
-    .s2ImgsTerceira {
-      display: none;
-    }
-    .s2ImgsTerceira2 {
-      display: none;
-    }
-    .s2Imgs {
-      gap: 20px;
-    }
-    .s2Imgs2 {
-      gap: 20px;
-    }
-  }
-  @media (max-width: 500px) {
-    .s2Imgs {
-      gap: 5px;
-    }
-    .s2ImgsContainerDentro2 {
-      justify-content: center;
-      gap: 10px;
-    }
-    .s2ImgsContainerDentro {
-      justify-content: center;
-      gap: 10px;
-    }
-  }
-  .s3 {
-    background-image: url(../../assets/imgs/Section03-adidas\ 1.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-top: 100px;
-    position: relative;
-  }
-  
-  .s3Titulo {
-    color: white;
-    position: absolute;
-    top: 300px;
-    left: 70px;
-    font-size: 30px;
-    margin-right: 23em;
-    font-family: "Jost", sans-serif;
-    font-weight: 300;
-  }
-  
-  .s3Btn {
-    text-decoration: none;
-    position: absolute;
-    top: 430px;
-    left: 80px;
-    color: white;
-    font-family: "Jost", sans-serif;
-    border: 1px solid white;
-    padding: 20px;
-  }
-  
-  @media (max-width: 1220px) {
-    .s3 {
-      background-image: none;
-      height: 0;
-    }
-    .s3Btn {
-      display: none;
-    }
-    .s3Titulo {
-      display: none;
-    }
-    .s2-imgs-responsiva {
-      display: none;
-    }
-    .s2Imgs .s2ImgsTerceira2 {
-      display: none;
-    }
-  }
+.homeContainer .s1 {
+  display: flex;
+  align-items: center;
+}
+.homeContainer .s1 .s1Container {
+  display: flex;
+  flex-direction: column;
+}
+.homeContainer .s1 .s1Container .s1Texto {
+  font-family: "Jost", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  text-align: start;
+  padding-left: 19rem;
+}
+.homeContainer .s1 .s1Container .s1Btn {
+  margin-left: 62%;
+  text-align: center;
+  padding: 10px 10px;
+  margin-right: 21%;
+  color: black;
+  text-decoration: none;
+  border: solid 1px black;
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+.homeContainer .s1 div .s1Img {
+  max-width: 600px;
+  padding-right: 8rem;
+}
+.homeContainer .s2 {
+  height: 100vh;
+}
+.homeContainer .s2 .s2Titulo {
+  text-align: center;
+  margin-top: 5%;
+  font-size: 42px;
+  font-family: "Jost", sans-serif;
+  font-weight: 900;
+}
+.homeContainer .s2 .s2Filtros {
+  display: flex;
+  gap: 4em;
+  justify-content: center;
+}
+.homeContainer .s2 .s2Filtros .filtrosItem {
+  text-decoration: none;
+  color: black;
+  font-family: "Jost", sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+}
+.homeContainer .s2 .s2Imgs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 100px;
+  font-family: "Jost", sans-serif;
+  font-size: 15px;
+}
+.homeContainer .s2 .s2Imgs .s2ImgsPrimeira {
+  margin-top: 15px;
+}
+.homeContainer .s2 .s2Imgs .s2ImgsTerceira {
+  margin-top: 37px;
+}
+.homeContainer .s2 .s2Imgs .s2ImgsContainerDentro {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.homeContainer .s2 .s2Imgs2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 100px;
+  font-family: "Jost", sans-serif;
+  font-size: 15px;
+}
+.homeContainer .s2 .s2Imgs2 .s2ImgsContainerDentro2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
+.homeContainer .s3 {
+  height: 100vh;
+  background-image: url(../../assets/images/section03.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 100px;
+  position: relative;
+}
+.homeContainer .s3 .s3Titulo {
+  color: white;
+  position: absolute;
+  top: 300px;
+  left: 70px;
+  font-size: 30px;
+  margin-right: 23em;
+  font-family: "Jost", sans-serif;
+  font-weight: 300;
+}
+.homeContainer .s3 .s3Btn {
+  text-decoration: none;
+  position: absolute;
+  top: 430px;
+  left: 80px;
+  color: white;
+  font-family: "Jost", sans-serif;
+  border: 1px solid white;
+  padding: 20px;
+}
 
-  .footerContainer {
-    display: flex;
-    flex-direction: column;
-    margin-top: 100px;
+@media (max-width: 1220px) {
+  .homeContainer .s1 .s1Container .s1Texto {
+    display: none;
   }
-  
-  .footer {
-    display: flex;
-    gap: 150px;
-    justify-content: center;
-    margin-top: 100px;
-    height: 50vh;
-    font-family: "Jost", sans-serif;
+  .homeContainer .s1 .s1Container .s1Btn {
+    display: none;
   }
-  
-  .listTitulo {
-    margin-bottom: 30px;
-    text-decoration: none;
-    color: black;
-    font-weight: 700;
+  .homeContainer .s1 div .s1Img {
+    display: none;
   }
-  
-  .listItem {
-    margin-top: 10px;
-    text-decoration: none;
-    color: black;
+  .homeContainer .s2 .s2ImgsResponsiva {
+    display: none;
   }
-  
-  .footerDireitos {
-    color: black;
-    font-family: "Jost", sans-serif;
-    text-align: center;
+  .homeContainer .s2 .s2Imgs .s2ImgsTerceira2 {
+    display: none;
   }
-  
-  .footerLinks {
-    display: flex;
-    justify-content: center;
+  .homeContainer .s3 {
+    background-image: none;
+    height: 0;
+  }
+  .homeContainer .s3 .s3Btn {
+    display: none;
+  }
+  .homeContainer .s3 .s3Titulo {
+    display: none;
+  }
+}
+@media (max-width: 968px) {
+  .homeContainer .s2 .s2Titulo {
+    font-size: 32px;
+    margin-top: 50px;
+  }
+  .homeContainer .s2 .s2Filtros {
+    flex-wrap: wrap;
+  }
+  .homeContainer .s2 .s2Imgs {
     gap: 20px;
-    margin-bottom: 50px;
   }
-  
-  @media (max-width: 830px) {
-    .footer {
-      flex-wrap: wrap;
-      margin-top: 50px;
-    }
-    .footerDireitos {
-      padding-top: 200px;
-    }
-  }/*# sourceMappingURL=style.css.map */
+  .homeContainer .s2 .s2Imgs .s2ImgsTerceira {
+    display: none;
+  }
+  .homeContainer .s2 .s2Imgs2 {
+    gap: 20px;
+  }
+  .homeContainer .s2 .s2Imgs2 .s2ImgsTerceira2 {
+    display: none;
+  }
+}
+@media (max-width: 830px) {
+  .homeContainer .footer {
+    flex-wrap: wrap;
+    margin-top: 50px;
+  }
+}
+@media (max-width: 500px) {
+  .homeContainer .s2 .s2Imgs {
+    gap: 5px;
+  }
+  .homeContainer .s2 .s2Imgs .s2ImgsContainerDentro {
+    justify-content: center;
+    gap: 10px;
+  }
+  .homeContainer .s2 .s2Imgs2 .s2ImgsContainerDentro2 {
+    justify-content: center;
+    gap: 10px;
+  }
+}/*# sourceMappingURL=Home.module.css.map */

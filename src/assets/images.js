@@ -12,7 +12,4 @@ import twitter from "./images/twitter.png";
 
 
 
-
-
-
 export { logo, Jordan, airForce1, nikeP600, nikeWaffle, nikeESeries, airForce07, airMaxSystem, facebook, instagram, twitter };

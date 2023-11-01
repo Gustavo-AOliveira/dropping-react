@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './ProductManagement.module.css';
+import styles from './styles.module.css';
 
 function ProductManagement() {
   return (
-    <div className={styles.container}>
+    <div className={styles.menuContainer}>
       <div className={styles.header}>
         <span>Product management</span>
         <button id="new">Add</button>
@@ -32,4 +32,4 @@ function ProductManagement() {
   );
 }
 
-export default ProductManagement;
+export { ProductManagement };
