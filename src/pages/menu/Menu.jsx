@@ -20,8 +20,9 @@ function ProductManagement() {
               <th>Colour</th>
               <th>Image</th>
               <th>Gender</th>
-              <th className="acao"><a className="acoes" href="#">Update</a></th>
-              <th className="acao"><a className="acoes" href="#">Delete</a></th>
+              <th>Update</th>
+              <th>Update</th>
+              
             </tr>
           </thead>
           <tbody>
@@ -33,8 +34,22 @@ function ProductManagement() {
               <td>Red</td>
               <td>Pendente</td>
               <td>Masculino</td>
-              <td><button>Update</button></td>
-              <td><button>Delete</button></td>
+              <th className="acao"><a className="acoes" href="#">Update</a></th>
+              <th className="acao"><a className="acoes" href="#">Delete</a></th>
+            </tr>
+          </tbody>
+
+          <tbody>
+            <tr>
+              <td>2</td>
+              <td>Adidas</td>
+              <td>Adidas</td>
+              <td>39</td>
+              <td>Pink</td>
+              <td>Pendente</td>
+              <td>Feminino</td>
+              <th className="acao"><a className="acoes" href="#">Update</a></th>
+              <th className="acao"><a className="acoes" href="#">Delete</a></th>
             </tr>
           </tbody>
         </table>
