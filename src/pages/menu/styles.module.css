@@ -1,51 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
-
-.menuContainer {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.1);
-  
-  .menuContainer .header {
-    min-height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: auto 12px;
-  }
-  .menuContainer .header span {
-    font-weight: 900;
-    font-size: 20px;
-    word-break: break-all;
-  }
-  .menuContainer button {
-    cursor: pointer;
-  }
-  .menuContainer .container {
-    width: 90%;
-    height: 80%;
-    border-radius: 10px;
-    background: white;
-  }
-  .menuContainer .divTable {
-    padding: 10px;
-    width: auto;
-    height: inherit;
-    overflow: auto;
-  }
-}
-.menuContainer * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
-
-
-
+.menuContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.menuContainer .header {
+  width: 85%;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto 12px;
+}
+.menuContainer .header span {
+  font-weight: 900;
+  font-size: 20px;
+  word-break: break-all;
+}
+.menuContainer .header button {
+  cursor: pointer;
+}
 .menuContainer #new {
   font-size: 16px;
   padding: 8px;
@@ -54,73 +38,69 @@
   color: black;
   background-color: white;
 }
-
+.menuContainer .divTable {
+  padding: 10px;
+  width: 85%;
+  height: inherit;
+  overflow: auto;
+}
 .menuContainer .divTable::-webkit-scrollbar {
   width: 12px;
   background-color: whitesmoke;
 }
 .menuContainer .divTable::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color: darkgray;
 }
-.menuContainer table {
+.menuContainer .divTable table {
   width: 100%;
   border-spacing: 10px;
   word-break: break-all;
   border-collapse: collapse;
+  background-color: rgba(0, 0, 0, 0.1);
 }
-.menuContainer thead {
+.menuContainer .divTable table thead {
   background-color: whitesmoke;
 }
-.menuContainer tr {
+.menuContainer .divTable table thead tr {
   border-bottom: 1px solid rgb(238, 235, 235) !important;
 }
-.menuContainer tbody tr td {
+.menuContainer .divTable table thead tr th {
+  padding: 5px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.menuContainer .divTable table thead tr th.acao {
+  width: 100px !important;
+  text-align: center;
+}
+.menuContainer .divTable table thead tr td {
   vertical-align: text-top;
   padding: 6px;
   max-width: 50px;
 }
-.menuContainer thead tr th {
-  padding: 5px;
-  text-align: start;
+.menuContainer .divTable table tbody tr {
   margin-bottom: 50px;
 }
-.menuContainer tbody tr {
-  margin-bottom: 50px;
+.menuContainer .divTable table tbody tr td {
+  text-align: center;
+  white-space: nowrap;
+  max-width: 8ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.menuContainer thead tr th.acao {
-  width: 100px !important;
+.menuContainer .divTable table tbody tr td.acao {
   text-align: center;
 }
-.menuContainer tbody tr td.acao {
-  text-align: center;
+.menuContainer .divTable table tbody tr td button {
+  border: none;
+  outline: none;
+  background: transparent;
 }
-@media (max-width: 700px) {
-  .menuContainer body {
-    font-size: 10px;
-  }
-  .menuContainer .header span {
-    font-size: 15px;
-  }
-  .menuContainer #new {
-    padding: 5px;
-    font-size: 10px;
-  }
-  .menuContainer thead tr th.acao {
-    width: auto !important;
-  }
-  .menuContainer td button i {
-    font-size: 20px !important;
-  }
-  .menuContainer td button i:first-child {
-    margin-right: 0;
-  }
-  .menuContainer .modal {
-    width: 90% !important;
-  }
-  .menuContainer .modal label {
-    font-size: 12px !important;
-  }
+.menuContainer .divTable table tbody tr td button i {
+  font-size: 25px;
+}
+.menuContainer .divTable table tbody tr td button i:first-child {
+  margin-right: 10px;
 }
 .menuContainer .modal-container {
   width: 100vw;
@@ -174,6 +154,12 @@
 .menuContainer .active .modal {
   animation: modal 0.4s;
 }
+.menuContainer .acoes {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
 @keyframes modal {
   from {
     opacity: 0;
@@ -184,19 +170,30 @@
     transform: translate3d(0, 0, 0);
   }
 }
-.menuContainer td button {
-  border: none;
-  outline: none;
-  background: transparent;
-}
-.menuContainer td button i {
-  font-size: 25px;
-}
-.menuContainer td button i:first-child {
-  margin-right: 10px;
-}
-.menuContainer .acoes {
-  text-decoration: none;
-  color: black;
-  font-weight: 500;
+@media (max-width: 700px) {
+  body {
+    font-size: 10px;
+  }
+  .menuContainer .header span {
+    font-size: 15px;
+  }
+  .menuContainer #new {
+    padding: 5px;
+    font-size: 10px;
+  }
+  thead tr th.acao {
+    width: auto !important;
+  }
+  td button i {
+    font-size: 20px !important;
+  }
+  td button i:first-child {
+    margin-right: 0;
+  }
+  .modal {
+    width: 90% !important;
+  }
+  .modal label {
+    font-size: 12px !important;
+  }
 }/*# sourceMappingURL=styles.module.css.map */
