@@ -158,10 +158,11 @@
 .menuContainer .active .modal {
   animation: modal 0.4s;
 }
-.menuContainer .acoes {
+.menuContainer .acao {
   text-decoration: none;
   color: black;
   font-weight: 500;
+  font-family: "Poppins", sans-serif;
 }
 
 @keyframes modal {

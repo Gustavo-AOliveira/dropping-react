@@ -180,6 +180,7 @@
             background-color: rgb(0, 0, 0);
             color: white;
         }
+        
     }
 
 
@@ -191,11 +192,15 @@
         animation: modal .4s;
     }
 
-    .acoes {
+    
+    .acao {
         text-decoration: none;
         color: black;
         font-weight: 500;
+        font-family: 'Poppins', sans-serif;
+        
     }
+    
 }
 
 @keyframes modal {

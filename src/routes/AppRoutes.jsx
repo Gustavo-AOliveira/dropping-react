@@ -3,7 +3,8 @@ import { Home } from "../pages/home/Home";
 import { Login } from '../pages/login/Login';
 import { Cadastro } from "../pages/cadastro/Cadastro";
 import { ProductManagement } from "../pages/menu/Menu";
-
+import { CadProduto } from "../pages/cadProduto/CadProduto";
+import { AtualizaProduto } from "../pages/atualizaProduto/atualizaProduto";
 const AppRoutes = () => {
     return(
         <BrowserRouter>
@@ -12,6 +13,9 @@ const AppRoutes = () => {
                 <Route path="/login" element={ < Login /> }/>
                 <Route path="/cadastro" element={ < Cadastro /> }/>
                 <Route path="/menu" element={ < ProductManagement /> }/>
+                <Route path="/cadProduto" element={ < CadProduto /> }/>
+                <Route path="/atualizaProduto" element={ < AtualizaProduto /> }/>
+
             </Routes>
         </BrowserRouter>
     );

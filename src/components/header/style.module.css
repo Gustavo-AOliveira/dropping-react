@@ -11,11 +11,12 @@
   list-style: none;
   gap: 2rem;
   padding-right: 170px;
-  font-family: "Jost", sans-serif;
 }
 .header div .lista__header .lista__item {
   color: black;
   text-decoration: none;
+  font-family: "Jost", sans-serif;
+  font-weight: 700;
 }
 .header div .login__header {
   color: black;
@@ -25,6 +26,7 @@
   padding: 10px;
   font-size: 13px;
   font-family: "Jost", sans-serif;
+  font-weight: 700;
 }
 
 @media (max-width: 968px) {

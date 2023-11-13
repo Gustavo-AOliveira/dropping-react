@@ -23,6 +23,7 @@
 }
 .footerContainer .footerDireitos {
   color: black;
+  font-weight: 700;
   font-family: "Jost", sans-serif;
   text-align: center;
 }

@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import styles from './styles.module.css';
 
 function ProductManagement() {
@@ -6,7 +5,10 @@ function ProductManagement() {
     <div className={ styles.menuContainer }>
       <div className={ styles.header }>
         <span>Product management</span>
-        <button id="new">Add</button>
+        <a href="/cadProduto">
+            <button id="new">Add</button>
+        </a>
+        
       </div>
 
       <div className={ styles.divTable }>
@@ -17,11 +19,11 @@ function ProductManagement() {
               <th>Brand</th>
               <th>Name</th>
               <th>Size</th>
-              <th>Colour</th>
+              <th>Color</th>
               <th>Image</th>
               <th>Gender</th>
               <th>Update</th>
-              <th>Update</th>
+              <th>Delete</th>
               
             </tr>
           </thead>
@@ -34,8 +36,10 @@ function ProductManagement() {
               <td>Red</td>
               <td>Pendente</td>
               <td>Masculino</td>
-              <th className="acao"><a className="acoes" href="#">Update</a></th>
-              <th className="acao"><a className="acoes" href="#">Delete</a></th>
+              <th><a className={ styles.acao } href="/atualizaProduto">Update</a></th>
+              <th><a className={ styles.acao } href="#" >Delete</a></th>
+
+              
             </tr>
           </tbody>
 
@@ -48,8 +52,8 @@ function ProductManagement() {
               <td>Pink</td>
               <td>Pendente</td>
               <td>Feminino</td>
-              <th className="acao"><a className="acoes" href="#">Update</a></th>
-              <th className="acao"><a className="acoes" href="#">Delete</a></th>
+              <th><a className={ styles.acao } href="/atualizaProduto">Update</a></th>
+              <th><a className={ styles.acao } href="#" >Delete</a></th>
             </tr>
           </tbody>
         </table>
