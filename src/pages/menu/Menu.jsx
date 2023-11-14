@@ -1,6 +1,26 @@
+import { useEffect, useState } from 'react';
 import styles from './styles.module.css';
+import axios from 'axios';
 
 function ProductManagement() {
+  const [listaProdutos, setListaProdutos] = useState([]);
+
+  async function listarProdutos() {
+    try {
+      let resposta = await axios.get('http://localhost:3000/api/products');
+      let produtos = resposta.data;
+  
+      setListaProdutos(produtos);
+    } catch (error) {
+      console.error('Erro ao buscar produtos:', error);
+    }
+  }
+  
+  useEffect(() => {
+    listarProdutos();
+  }, []);
+
+
   return (
     <div className={ styles.menuContainer }>
       <div className={ styles.header }>
@@ -28,33 +48,31 @@ function ProductManagement() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Nike</td>
-              <td>Nike Air Max Plus</td>
-              <td>30</td>
-              <td>Red</td>
-              <td>Pendente</td>
-              <td>Masculino</td>
-              <th><a className={ styles.acao } href="/atualizaProduto">Update</a></th>
-              <th><a className={ styles.acao } href="#" >Delete</a></th>
-
-              
-            </tr>
+            {listaProdutos.map((item) => (
+              <tr key={item.id}>
+                <td>{item.id}</td>
+                <td>{item.brand}</td>
+                <td>{item.name}</td>
+                <td>{item.size}</td>
+                <td>{item.color}</td>
+                <td>{item.image}</td>
+                <td>{item.gender}</td>
+                <th>
+                  <a className={styles.acao} href="/atualizaProduto">
+                    Update
+                  </a>
+                </th>
+                <th>
+                  <a className={styles.acao} href="#">
+                    Delete
+                  </a>
+                </th>
+              </tr>
+            ))}
           </tbody>
 
           <tbody>
-            <tr>
-              <td>2</td>
-              <td>Adidas</td>
-              <td>Adidas</td>
-              <td>39</td>
-              <td>Pink</td>
-              <td>Pendente</td>
-              <td>Feminino</td>
-              <th><a className={ styles.acao } href="/atualizaProduto">Update</a></th>
-              <th><a className={ styles.acao } href="#" >Delete</a></th>
-            </tr>
+            
           </tbody>
         </table>
       </div>
