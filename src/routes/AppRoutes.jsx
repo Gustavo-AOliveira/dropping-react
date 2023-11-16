@@ -15,7 +15,7 @@ const AppRoutes = () => {
                 <Route path="/menu" element={ < ProductManagement /> }/>
                 <Route path="/cadProduto" element={ < CadProduto /> }/>
                 <Route path="/atualizaProduto" element={ < AtualizaProduto /> }/>
-
+                <Route path="/*" element={ <h1>Página não encontrada</h1> }/>
             </Routes>
         </BrowserRouter>
     );

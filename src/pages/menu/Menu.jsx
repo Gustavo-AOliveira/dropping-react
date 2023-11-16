@@ -15,6 +15,11 @@ function ProductManagement() {
       console.error('Erro ao buscar produtos:', error);
     }
   }
+
+  const handleProductDelete = async (id) => {
+    await axios.delete(`http://localhost:3000/api/products/${id}`).then(() => alert("Deletado!")).catch(error => console.log(error));
+    window.location.reload();
+  }
   
   useEffect(() => {
     listarProdutos();
@@ -63,7 +68,7 @@ function ProductManagement() {
                   </a>
                 </th>
                 <th>
-                  <a className={styles.acao} href="#">
+                  <a className={styles.acao} href="#" onClick={ () => handleProductDelete(item.id) }>
                     Delete
                   </a>
                 </th>

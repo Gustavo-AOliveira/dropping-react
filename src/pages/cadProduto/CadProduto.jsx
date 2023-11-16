@@ -2,9 +2,15 @@ import React, { useState } from 'react';
 import styles from './styles.module.css';
 import { Footer } from '../../components/footer';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { Toast } from '../../components/toast/Toast';
+import { toast } from 'react-toastify';
 
 function CadProduto() {
     
+    const navigate = useNavigate();
+    const [isDisabled, setIsDisabled] = useState(false);
+
     const [brand, setBrand] = useState('');
     const [name, setName] = useState('');
     const [size, setSize] = useState('');
@@ -12,9 +18,15 @@ function CadProduto() {
     const [image, setImage] = useState('');
     const [gender, setGender] = useState('');
 
-    async function salvarSneaker(){
+    const sleep = (ms) => {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
 
-        
+    const handleRedirect = () => {
+        navigate("/menu");
+    }
+
+    async function salvarSneaker() {
         let body = {
             brand: brand,
             name: name,
@@ -23,10 +35,10 @@ function CadProduto() {
             image: image,
             gender: gender
         }
-        let resposta = await axios.post('http://localhost:3000/api/products', body);
-        let id = resposta.data.id;
 
-        alert('Produto cadastrado com sucesso. ID: ' + id )
+        await axios.post('http://localhost:3000/api/products', body).then(data => {
+            alert("Adicionado");
+        }).catch(console.log());
     }
 
  
@@ -40,9 +52,7 @@ function CadProduto() {
 
                 <img className={ styles.s1Img } src="../assets/imgs/logo-dropping.svg" alt="" />
     
-                <form action="" method="POST">
-
-
+                <form onSubmit={ salvarSneaker }>
                     <label className={ styles.inputImgEmail }>
                         <input type="text" value={brand} onChange={e => setBrand(e.target.value)} id="username" name="username" placeholder="Brand" required={true} />
                     </label>
@@ -68,17 +78,21 @@ function CadProduto() {
                     </label>
                     <br /><br />
                     
-                    <label className={styles.inputFile} for="imagem">Select a image:</label>
+                    <label className={styles.inputFile} htmlFor="imagem">Select a image:</label>
                      <input type="file" value={image} onChange={e => setImage(e.target.files[0])} id="imagem" name="imagem" accept="image/*"></input>
 
                     <br /><br />
                     
-                    <input className={ styles.customButton } onClick={salvarSneaker} type="submit" value="Add" />
+                    <button className={ styles.customButton } type="submit" disabled={ isDisabled }>Add</button>
                 </form>
             </div>
           </section>
+
+          <i className="fa-solid fa-angle-left" onClick={ handleRedirect }></i>
     
           <Footer />
+
+          <Toast />
         </div>
       );
     }
