@@ -3,6 +3,7 @@ import styles from './styles.module.css';
 import axios from 'axios';
 
 function ProductManagement() {
+
   const [listaProdutos, setListaProdutos] = useState([]);
 
   async function listarProdutos() {
@@ -63,7 +64,7 @@ function ProductManagement() {
                 <td>{item.image}</td>
                 <td>{item.gender}</td>
                 <th>
-                  <a className={styles.acao} href="/atualizaProduto">
+                  <a className={styles.acao} href={`/atualizaProduto/${item.id}`}>
                     Update
                   </a>
                 </th>

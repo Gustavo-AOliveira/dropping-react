@@ -2,7 +2,7 @@
   display: flex;
   gap: 150px;
   justify-content: center;
-  margin-top: 155px;
+  margin-top: 160px;
   height: 50vh;
   font-family: "Jost", sans-serif;
 }
@@ -14,7 +14,7 @@
   margin-bottom: 30px;
   text-decoration: none;
   color: black;
-  font-weight: 700;
+  font-weight: 500;
 }
 .footerContainer .footer .footerContainer .listItem {
   margin-top: 10px;
@@ -23,8 +23,9 @@
 }
 .footerContainer .footerDireitos {
   color: black;
-  font-weight: 700;
+  font-weight: 400;
   font-family: "Jost", sans-serif;
+  margin-bottom: 10px;
   text-align: center;
 }
 .footerContainer .footerLinks {

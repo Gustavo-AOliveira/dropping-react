@@ -17,10 +17,15 @@
                 .inputImgUsuario,
                 .inputImgSenha {
                     display: block;
-                    width: 300px;
+                    width: 340px               
+                 }
+                .inputImgUsuario input{
+                    width: 93%;
+                    padding: 10px;
+                    border: 1px solid black;
+                    border-radius: 5px;
+                    margin-top: 12px;
                 }
-
-                .inputImgUsuario input,
                 .inputImgSenha input {
                     width: 100%;
                     padding: 10px;
@@ -46,7 +51,7 @@
                 }
 
                 .customButton {
-                    width: 322px;
+                    width: 93%;
                     padding: 10px;
                     background-color: black;
                     color: white;

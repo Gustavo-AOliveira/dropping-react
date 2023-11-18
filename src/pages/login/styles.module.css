@@ -7,13 +7,14 @@
   align-items: center;
 }
 .loginContainer .s1 .s1Content .s1Img {
-  margin-top: 3rem;
+  margin-top: 6.5rem;
   max-width: 400px;
 }
 .loginContainer .s1 .s1Content form .inputImgUsuario,
 .loginContainer .s1 .s1Content form .inputImgSenha {
   display: block;
   width: 300px;
+  height: 25px;
 }
 .loginContainer .s1 .s1Content form .inputImgUsuario input,
 .loginContainer .s1 .s1Content form .inputImgSenha input {
@@ -24,11 +25,12 @@
   margin-top: 12px;
 }
 .loginContainer .s1 .s1Content form .customButton {
-  width: 322px;
   padding: 10px;
   background-color: black;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  text-decoration: none;
+  font-size: 13px;
 }/*# sourceMappingURL=styles.module.css.map */

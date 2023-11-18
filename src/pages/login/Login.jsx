@@ -23,7 +23,7 @@ export function Login() {
             </label>
             <br /><br />
 
-            <input className={styles.customButton} type="submit" value="Login" />
+            <a href='/menu' className={styles.customButton} type="submit" value="Login">Login</a>
           </form>
         </div>
       </section>

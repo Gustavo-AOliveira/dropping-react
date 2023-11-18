@@ -4,7 +4,6 @@ import { Footer } from '../../components/footer';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Toast } from '../../components/toast/Toast';
-import { toast } from 'react-toastify';
 
 function CadProduto() {
     

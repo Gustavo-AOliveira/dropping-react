@@ -1,63 +1,104 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import { Footer } from '../../components/footer';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
-function AtualizaProduto() {
-    return (
-        <div className={ styles.atualizaProdutoContainer }>
-    
-          <section className={ styles.s1 }>
-            <div className={ styles.s1Content }>
+  function AtualizaProduto(produtoId, body) {
 
-                <h1 className={ styles.titulo }>Atualizar Sneaker</h1>
+    const { id } = useParams();
 
-                <img className={ styles.s1Img } src="../assets/imgs/logo-dropping.svg" alt="" />
-    
-                <form action="" method="POST">
+    async function buscarProduto() {
+      let r = await axios.get('http://localhost:3000/api/products/' + id);
 
-                <label className={ styles.inputImgEmail }>
-                        <input type="text" id="Code" name="Code" placeholder="Code" required={true} />
-                    </label>
-                    <br /><br />
-                    
-                    <label className={ styles.inputImgEmail }>
-                        <input type="text" id="username" name="username" placeholder="Brand" required={true} />
-                    </label>
-                    <br /><br />
-
-                    <label className={ styles.inputImgEmail }>
-                        <input type="text" id="name" name="name" placeholder="Name" required={true} />
-                    </label>
-                    <br /><br />
-                    
-                    <label className={ styles.inputImgEmail }>
-                        <input type="text" id="size" name="size" placeholder="Size" required={true} />
-                    </label>
-                    <br /><br />
-    
-                    <label className={ styles.inputImgEmail }>
-                        <input type="text" id="color" name="color" placeholder="Color" required={true} />
-                    </label>
-                    <br /><br />
-
-                    <label className={ styles.inputImgEmail }>
-                        <input type="text" id="gender" name="gender" placeholder="Gender" required={true} />
-                    </label>
-                    <br /><br />
-                    
-                    <label className={styles.inputFile} for="imagem">Selecione uma imagem:</label>
-                     <input type="file" id="imagem" name="imagem" accept="image/*"></input>
-
-                    <br /><br />
-                    
-                    <input className={ styles.customButton } type="submit" value="Update" />
-                </form>
-            </div>
-          </section>
-    
-          <Footer />
-        </div>
-      );
+      setBrand(r.data.brand);
+      setName(r.data.name);
+      setSize(r.data.size);
+      setColor(r.data.color);
+      setGender(r.data.gender);
     }
+
+    useEffect(() => {
+      if (id) {
+        buscarProduto();
+      }
+    }, [])
+
+      const [brand, setBrand] = useState('');
+      const [name, setName] = useState('');
+      const [size, setSize] = useState('');
+      const [color, setColor] = useState('');
+      const [image, setImage] = useState('');
+      const [gender, setGender] = useState('');
+
+      const atualizaProduto = async () => {  
+        const body = {
+            brand: brand,
+            name: name,
+            size: size,
+            color: color,
+            image: image,
+            gender: gender
+        }
+        
+        try {
+          await axios.put(`http://localhost:3000/api/products/${id}`, body);
+          alert("Atualizado com sucesso");
+        } catch (error) {
+          console.error('Erro ao atualizar produto:', error);
+        }
+      };
+    
+      return (
+          <div className={ styles.atualizaProdutoContainer }>
+      
+            <section className={ styles.s1 }>
+              <div className={ styles.s1Content }>
+
+                  <h1 className={ styles.titulo }>Atualizar Sneaker</h1>
+
+                  <img className={ styles.s1Img } src="../assets/imgs/logo-dropping.svg" alt="" />
+      
+                  <form>
+                      
+                      <label className={ styles.inputImgEmail }>
+                          <input type="text" value={brand} onChange={e => setBrand(e.target.value)}  id="brand" name="brand" placeholder="Brand" required={true} />
+                      </label>
+                      <br /><br />
+
+                      <label className={ styles.inputImgEmail }>
+                          <input type="text" value={name} onChange={e => setName(e.target.value)} id="name" name="name" placeholder="Name" required={true} />
+                      </label>
+                      <br /><br />
+                      
+                      <label className={ styles.inputImgEmail }>
+                          <input type="text" value={size} onChange={e => setSize(e.target.value)} id="size" name="size" placeholder="Size" required={true} />
+                      </label>
+                      <br /><br />
+      
+                      <label className={ styles.inputImgEmail }>
+                          <input type="text" value={color} onChange={e => setColor(e.target.value)}  id="color" name="color" placeholder="Color" required={true} />
+                      </label>
+                      <br /><br />
+
+                      <label className={ styles.inputImgEmail }>
+                          <input type="text" value={gender} onChange={e => setGender(e.target.value)}  id="gender" name="gender" placeholder="Gender" required={true} />
+                      </label>
+                      <br /><br />
+                      
+                      <label className={styles.inputFile} for="imagem">Selecione uma imagem:</label>
+                      <input type="file" id="imagem" name="imagem" accept="image/*"></input>
+
+                      <br /><br />
+                      
+                      <input className= { styles.customButton } onClick={ atualizaProduto } type="submit" value="Update" />
+                  </form>
+              </div>
+            </section>
+      
+            <Footer />
+          </div>
+        );
+      }
 
 export { AtualizaProduto };
