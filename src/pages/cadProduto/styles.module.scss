@@ -1,6 +1,9 @@
 .cadProdutoContainer {
+
+    
     .s1 {
         height: 100vh;
+        
 
         .s1Content {
             display: flex;
@@ -21,6 +24,8 @@
             }
 
             form {
+
+                width: 300px;
 
                 .inputImgUsuario,
                 .inputImgSenha {

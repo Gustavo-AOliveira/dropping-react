@@ -28,6 +28,10 @@
   font-family: "Jost", sans-serif;
   font-weight: 400;
 }
+.header div .login__header:hover {
+  background-color: black;
+  color: white;
+}
 
 @media (max-width: 968px) {
   .homeContainer .header {

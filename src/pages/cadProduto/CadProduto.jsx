@@ -26,23 +26,31 @@ function CadProduto() {
     }
 
     async function salvarSneaker() {
-        let body = {
-            brand: brand,
-            name: name,
-            size: size,
-            color: color,
-            image: image,
-            gender: gender
-        }
-
-        await axios.post('http://localhost:3000/api/products', body).then(data => {
-            alert("Adicionado");
-        }).catch(console.log());
+      let body = {
+        brand: brand,
+        name: name,
+        size: size,
+        color: color,
+        image: image,
+        gender: gender
+      };
+    
+      try {
+        await axios.post('http://localhost:3000/api/products', body);
+        alert("Produto adicionado");
+        setIsDisabled(true); 
+    } catch (error) {
+        console.error('Erro ao adicionar produto:', error);
     }
+    }
+    
+      
 
  
     return (
         <div className={ styles.cadProdutoContainer }>
+         
+          <i className="fa-solid fa-angle-left" onClick={ handleRedirect }></i>
     
           <section className={ styles.s1 }>
             <div className={ styles.s1Content }>
@@ -77,9 +85,6 @@ function CadProduto() {
                     </label>
                     <br /><br />
                     
-                    <label className={styles.inputFile} htmlFor="imagem">Select a image:</label>
-                     <input type="file" value={image} onChange={e => setImage(e.target.files[0])} id="imagem" name="imagem" accept="image/*"></input>
-
                     <br /><br />
                     
                     <button className={ styles.customButton } type="submit" disabled={ isDisabled }>Add</button>
@@ -87,7 +92,6 @@ function CadProduto() {
             </div>
           </section>
 
-          <i className="fa-solid fa-angle-left" onClick={ handleRedirect }></i>
     
           <Footer />
 

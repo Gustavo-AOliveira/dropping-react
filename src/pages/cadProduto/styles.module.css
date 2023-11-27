@@ -15,6 +15,9 @@
   margin-top: 3%;
   margin-right: 2%;
 }
+.cadProdutoContainer .s1 .s1Content form {
+  width: 300px;
+}
 .cadProdutoContainer .s1 .s1Content form .inputImgUsuario,
 .cadProdutoContainer .s1 .s1Content form .inputImgSenha {
   display: block;

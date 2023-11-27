@@ -26,6 +26,10 @@
   font-size: 16px;
   font-weight: 400;
 }
+.homeContainer .s1 .s1Container .s1Btn:hover {
+  background-color: black;
+  color: white;
+}
 .homeContainer .s1 div .s1Img {
   max-width: 600px;
   padding-right: 8rem;
@@ -39,6 +43,7 @@
   font-size: 42px;
   font-family: "Jost", sans-serif;
   font-weight: 900;
+  margin-bottom: 30px;
 }
 .homeContainer .s2 .s2Filtros {
   display: flex;
@@ -62,10 +67,10 @@
   font-size: 15px;
 }
 .homeContainer .s2 .s2Imgs .s2ImgsPrimeira {
-  margin-top: 30px;
+  margin-top: 17px;
 }
 .homeContainer .s2 .s2Imgs .s2ImgsTerceira {
-  margin-top: 25px;
+  margin-top: 37px;
 }
 .homeContainer .s2 .s2Imgs .s2ImgsContainerDentro {
   display: flex;
@@ -86,8 +91,11 @@
   flex-direction: row;
   justify-content: space-between;
 }
+.homeContainer .s2 .s2Imgs2 .s2ImgsResponsiva {
+  margin-top: 10px;
+}
 .homeContainer .s2 .s2Imgs2 .s2Imgs2Primeira {
-  margin-top: 2px;
+  margin-top: -13px;
 }
 .homeContainer .s3 {
   height: 100vh;
@@ -117,6 +125,10 @@
   font-family: "Jost", sans-serif;
   border: 1px solid white;
   padding: 20px;
+}
+.homeContainer .s3 .s3Btn:hover {
+  background-color: rgb(70, 67, 67);
+  color: white;
 }
 
 @media (max-width: 1220px) {

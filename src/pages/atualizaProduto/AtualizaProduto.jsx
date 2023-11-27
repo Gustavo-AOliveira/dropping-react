@@ -3,8 +3,10 @@ import styles from './styles.module.css';
 import { Footer } from '../../components/footer';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
   function AtualizaProduto(produtoId, body) {
+    const navigate = useNavigate();
 
     const { id } = useParams();
 
@@ -47,14 +49,19 @@ import { useParams } from 'react-router-dom';
         } catch (error) {
           console.error('Erro ao atualizar produto:', error);
         }
+        
+      
       };
-    
+      const handleRedirect = () => {
+        navigate("/menu");
+    }
       return (
           <div className={ styles.atualizaProdutoContainer }>
       
             <section className={ styles.s1 }>
+            <i className="fa-solid fa-angle-left" onClick={ handleRedirect }></i>
               <div className={ styles.s1Content }>
-
+                
                   <h1 className={ styles.titulo }>Atualizar Sneaker</h1>
 
                   <img className={ styles.s1Img } src="../assets/imgs/logo-dropping.svg" alt="" />
@@ -86,9 +93,7 @@ import { useParams } from 'react-router-dom';
                       </label>
                       <br /><br />
                       
-                      <label className={styles.inputFile} for="imagem">Selecione uma imagem:</label>
-                      <input type="file" id="imagem" name="imagem" accept="image/*"></input>
-
+                      
                       <br /><br />
                       
                       <input className= { styles.customButton } onClick={ atualizaProduto } type="submit" value="Update" />

@@ -32,6 +32,10 @@
                 font-size: 16px;
                 font-weight: 400;
             }
+            .s1Btn:hover{
+                background-color: black;
+                color: white
+            }
         }
 
         div {
@@ -51,6 +55,7 @@
             font-size: 42px;
             font-family: 'Jost', sans-serif;
             font-weight: 900;
+            margin-bottom: 30px;
         }
 
         .s2Filtros {
@@ -77,11 +82,11 @@
             font-size: 15px;
 
             .s2ImgsPrimeira {
-                margin-top: 30px;
+                margin-top: 17px;
             }
             
             .s2ImgsTerceira {
-                margin-top: 25px;
+                margin-top: 37px;
             }
 
             .s2ImgsContainerDentro {
@@ -89,6 +94,7 @@
                 flex-direction: row;
                 justify-content: space-between;
             }
+            
         }
 
         .s2Imgs2 {
@@ -105,9 +111,12 @@
                 flex-direction: row;
                 justify-content: space-between;
             }
+            .s2ImgsResponsiva{
+                margin-top: 10px;
+            }
 
             .s2Imgs2Primeira {
-                margin-top: 2px;
+                margin-top: -13px;
             }
         }
     }
@@ -141,6 +150,10 @@
             font-family: 'Jost', sans-serif;
             border: 1px solid white;
             padding: 20px;
+        }
+        .s3Btn:hover{
+            background-color: rgb(70, 67, 67);
+            color: white;
         }
     }
 }
