@@ -39,9 +39,10 @@ function CadProduto() {
         await axios.post('http://localhost:3000/api/products', body);
         alert("Produto adicionado");
         setIsDisabled(true); 
-    } catch (error) {
+      } catch (error) {
         console.error('Erro ao adicionar produto:', error);
-    }
+        alert("Erro ao adicionar produto. Por favor, tente novamente.");
+      }
     }
     
       
